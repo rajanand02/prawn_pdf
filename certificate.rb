@@ -29,13 +29,14 @@ Prawn::Document.generate("payment.pdf") do
               image "/home/raj/logo.png",:width => 180, :height => 60
             end
             
-            bounding_box([400, 40], :width => 150) do
+            bounding_box([400, 50], :width => 150) do
               fill_color "006ACC"
-              text "0333 9000 800", :align => :right, :height => 80, :size => 16
+              text "
+              0333 9000 800", :align => :right, :height => 50, :size => 16
               text "Lines Open: Mon-Fri 9am-5pm", :align => :right, :height => 80, :size => 10
             end
             
-            move_down 20
+            move_down 16
             stroke_color "ED6609"
             stroke_horizontal_rule
           end
