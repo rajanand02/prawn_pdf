@@ -6,8 +6,8 @@ require 'prawn/layout'
 Prawn::Document.generate("payment.pdf") do
   #body
   
-    bounding_box([6, 620], :width => 530, :height => 550) do
-    
+    bounding_box([10, 620], :width => 530, :height => 550) do
+   
     text "hey all"+ "this is prawn"+" . " * 3200 +
     "this is next page " +
     "it will take to u another page also" +
@@ -19,7 +19,10 @@ Prawn::Document.generate("payment.pdf") do
 
     repeat :all do
         
-          
+           stroke do
+              stroke_color "ED6609"
+             rounded_rectangle [0, 650], 550, 605, 6
+          end
         # header
         
           bounding_box [bounds.left, bounds.top], :width  => bounds.width do
@@ -36,9 +39,8 @@ Prawn::Document.generate("payment.pdf") do
               text "Lines Open: Mon-Fri 9am-5pm", :align => :right, :height => 80, :size => 10
             end
             
-            move_down 16
-            stroke_color "ED6609"
-            stroke_horizontal_rule
+            
+             
           end
  
           
@@ -46,8 +48,7 @@ Prawn::Document.generate("payment.pdf") do
           
         # footer
           bounding_box [bounds.left, bounds.bottom + 45], :width  => bounds.width do
-            stroke_color "ED6609"
-            stroke_horizontal_rule
+            
             fill_color "006ACC"
             font "Helvetica"
             move_down(35)
